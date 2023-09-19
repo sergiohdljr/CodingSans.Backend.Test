@@ -1,6 +1,6 @@
 import "dotenv";
 
-const dev = {
+export const config = {
   app: {
     port: process.env.PORT,
   },
@@ -14,5 +14,3 @@ const dev = {
     secret: process.env.SECRET_JWT,
   },
 };
-
-export default { dev };

@@ -1,6 +1,7 @@
+import { config } from "../src/config";
 import { app } from "./server";
 import "dotenv";
 
-app.listen(3000, () => {
-  console.log(`running server`);
+app.listen(config.app.port, () => {
+  console.log(`running server ${config.app.port}`);
 });
