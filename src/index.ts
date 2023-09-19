@@ -1,6 +1,6 @@
-import express from "express"
-import { app } from "./server"
+import { app } from "./server";
+import "dotenv";
 
-app.listen(3000,()=>{
-    console.log("rodando na porta 3000")
-})
+app.listen(3000, () => {
+  console.log(`running server`);
+});
