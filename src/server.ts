@@ -1,11 +1,7 @@
-import express from "express";
-import cors from "cors";
-import { rotas } from "./rotas";
-import morgan from "morgan";
+import { config } from "./config";
+import { app } from "./app";
+import "dotenv";
 
-export const app = express();
-
-app.use(express.json());
-app.use(cors());
-app.use(morgan("dev"));
-app.use(rotas);
+app.listen(config.app.port, () => {
+  console.log(`running server ${config.app.port}`);
+});

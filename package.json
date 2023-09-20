@@ -2,9 +2,9 @@
   "name": "CodingSans-Backend-Test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "ts-node-dev src/index.ts",
+    "dev": "ts-node-dev src/server.ts",
     "eslint": "npx eslint .",
     "eslint --fix": "npx eslint --fix",
     "format": "prettier --write \"src/**/*.ts\""
