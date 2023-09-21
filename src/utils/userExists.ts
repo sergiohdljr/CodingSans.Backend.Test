@@ -1,6 +1,6 @@
 import userRepository from "../dataAccess/userRepository";
 
-export const userExists = async (id: string): Promise<boolean> => {
-  const user = await userRepository.findUser(id);
+export const userExists = async (username: string): Promise<boolean> => {
+  const user = await userRepository.findUser(username);
   return user ? true : false;
 };
