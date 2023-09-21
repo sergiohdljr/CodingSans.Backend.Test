@@ -9,15 +9,15 @@ class UserController {
     const username = payload.username;
 
     if (await userExists(username)) {
-      return res.sendStatus(409)
+      return res.sendStatus(409);
     }
 
     try {
       await userService.saveUser(payload);
 
-      return res.sendStatus(201)
+      return res.sendStatus(201);
     } catch (error) {
-      return res.sendStatus(400)
+      return res.sendStatus(400);
     }
   }
 }
