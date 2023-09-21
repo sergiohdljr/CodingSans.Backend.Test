@@ -13,4 +13,7 @@ export const config = {
   jwt: {
     secret: process.env.SECRET_JWT,
   },
+  hash: {
+    saltRounds: process.env.SALTROUNDS,
+  },
 };
