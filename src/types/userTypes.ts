@@ -4,4 +4,3 @@ export type userType = {
   password: string;
 };
 
-export type userTypePayload = Pick<userType, "username" | "password">;

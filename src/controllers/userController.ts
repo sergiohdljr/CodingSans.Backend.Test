@@ -1,18 +1,18 @@
 import userService from "../services/userService";
-import { userTypePayload } from "../types/userTypes";
 import { Request, Response } from "express";
 import { userExists } from "../utils/userExists";
+import { userDTO } from "../types/userDTO";
 
 class UserController {
   async createUser(req: Request, res: Response) {
-    const { username, password } = req.body as unknown as userTypePayload;
+    const payload = req.body as unknown as userDTO;
 
-    if (await userExists(username)) {
+    if (await userExists(payload.username)) {
       return res.sendStatus(409);
     }
 
     try {
-      await userService.saveUser(username, password);
+      await userService.saveUser(payload);
 
       return res.sendStatus(201);
     } catch (error) {

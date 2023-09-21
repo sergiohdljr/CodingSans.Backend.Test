@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import { prisma } from "../dataAccess/db";
 import { hashPassword } from "../utils/hashPassword";
 import User from "../models/userModel";
+import { userDTO } from "../types/userDTO";
 
 class UserService {
   db: PrismaClient;
@@ -10,15 +11,15 @@ class UserService {
     this.db = prisma;
   }
 
-  async saveUser(username: string, password: string) {
-    const user = new User(username, password);
-    const hashSenha = hashPassword(user.getPassword());
-    user.setPassword(hashSenha);
+  async saveUser(user: userDTO) {
+    const NewUser = new User(user);
+    const hashSenha = hashPassword(NewUser.getPassword());
+    NewUser.setPassword(hashSenha);
 
     await this.db.user.create({
       data: {
-        username: user.getUsername(),
-        password: user.getPassword(),
+        username: NewUser.getUsername(),
+        password: NewUser.getPassword(),
       },
     });
   }

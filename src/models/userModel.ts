@@ -1,10 +1,12 @@
+import { userDTO } from "../types/userDTO";
+
 class User {
   private username: string;
   private password: string;
 
-  constructor(username: string, password: string) {
-    this.username = username;
-    this.password = password;
+  constructor(user: userDTO) {
+    this.username = user.username;
+    this.password = user.password;
   }
 
   getUsername() {
