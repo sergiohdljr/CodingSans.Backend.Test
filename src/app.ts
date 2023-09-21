@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { rotas } from "./routes/rotas";
+import { rotas } from "./routes/userRoutes";
 import morgan from "morgan";
 
 export const app = express();
