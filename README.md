@@ -28,19 +28,19 @@ For config handling we recommend our guide: https://codingsans.com/blog/node-con
 - [ ] The breweries endpoint ( `GET /breweries` ) should be guarded by a custom middleware.
 The middleware should validate the token and check if the user exists in the database.
 
-- [ ] The datasource should be the OpenBreweryDB https://www.openbrewerydb.org/
+- The datasource should be the OpenBreweryDB https://www.openbrewerydb.org/
 
-- [ ] Use the search API to fetch the data `https://api.openbrewerydb.org/breweries/search?query=dog`
+- [x] Use the search API to fetch the data `https://api.openbrewerydb.org/breweries/search?query=dog`
 
-- [ ] To fetch the data use either:
+- To fetch the data use either:
 - https://github.com/axios/axios
 - https://github.com/bitinn/node-fetch
 
-- [ ] The search param should be provided in the query params ( `GET /breweries?query=dog` )
+- [x] The search param should be provided in the query params ( `GET /breweries?query=dog` )
 
 - [ ] If the user is not authenticated on `GET /breweries` return `401`.
 
-- [ ] If the user not provided a query param return data from `https://api.openbrewerydb.org/breweries`
+- [x] If the user not provided a query param return data from `https://api.openbrewerydb.org/breweries`
 
 - [ ] If the user called any other then `POST /login` or `GET /breweries` return `404`.
 
