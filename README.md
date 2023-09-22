@@ -2,28 +2,28 @@
 
 The main goal is to create a web application which can authenticate via JWT (Json Web Token), and serve an API to GET a list of breweries filtered by a query based on the openbrewerydb.
 
-- [ ] For the web serving part you could use either 
+- [x] For the web serving part you could use either 
 - [Koa](https://koajs.com/)
 - [Express](https://expressjs.com/)
 - [Fastify](https://www.fastify.io/)
 
-- [ ] Please include a middleware for logging on all requests
+- [x] Please include a middleware for logging on all requests
 - https://github.com/koajs/logger
 - https://github.com/expressjs/morgan
 
-- [ ] The login endpoint ( `POST /login` ) should return a signed JWT token on correct username/password.
+- [x] The login endpoint ( `POST /login` ) should return a signed JWT token on correct username/password.
 
-- [ ] The token should be signed with https://github.com/auth0/node-jsonwebtoken and the signing secret should be provided via config.
+- [x] The token should be signed with https://github.com/auth0/node-jsonwebtoken and the signing secret should be provided via config.
 
 For config handling we recommend our guide: https://codingsans.com/blog/node-config-best-practices
 
-- [ ] The POST request's body should contain `{ username: string, password: string }`.
+- [x] The POST request's body should contain `{ username: string, password: string }`.
 
-- [ ] The following interface describes the user.
+- [x] The following interface describes the user.
 
 ``` { id: string; username: string; password: string; } ```
 
-- [ ] The users (with the given interface) should be stored inside a database. You can choose any db you like in your solution but the credentials should be provided via config.
+- [x] The users (with the given interface) should be stored inside a database. You can choose any db you like in your solution but the credentials should be provided via config.
 
 - [ ] The breweries endpoint ( `GET /breweries` ) should be guarded by a custom middleware.
 The middleware should validate the token and check if the user exists in the database.
