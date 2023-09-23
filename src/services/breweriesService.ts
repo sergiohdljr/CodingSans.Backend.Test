@@ -7,8 +7,8 @@ class BreweriesService {
     const searchQueryExist = search ? `/search?${search}` : "";
 
     const { data } = await axios.get(`${baseUrl}${searchQueryExist}`);
-    breweriesList.push(data);
-    console.log(`${baseUrl}${searchQueryExist}`);
+    breweriesList.push(...data);
+
     return breweriesList;
   }
 }
