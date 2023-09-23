@@ -1,13 +1,20 @@
 import axios from "axios";
+import { PartialBreweries } from "../types/breweriesTypes";
+import { config } from "../config";
 
 class BreweriesService {
-  async findAll(search?: string) {
-    const baseUrl = "https://api.openbrewerydb.org/breweries";
-    const breweriesList: any[] = [];
-    const searchQueryExist = search ? `/search?${search}` : "";
+  private url: string;
+  private breweries: PartialBreweries[];
 
-    const { data } = await axios.get(`${baseUrl}${searchQueryExist}`);
-    breweriesList.push(...data);
+  constructor() {
+    this.url = config.axios.url;
+    this.breweries = [];
+  }
+
+  async findAll(search?: string): Promise<PartialBreweries[]> {
+    const searchQueryExist = search ? `/search?${search}` : "";
+    const { data } = await axios.get(`${this.url}${searchQueryExist}`);
+    const breweriesList = (this.breweries = data);
 
     return breweriesList;
   }
