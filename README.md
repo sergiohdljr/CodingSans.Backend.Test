@@ -25,7 +25,7 @@ For config handling we recommend our guide: https://codingsans.com/blog/node-con
 
 - [x] The users (with the given interface) should be stored inside a database. You can choose any db you like in your solution but the credentials should be provided via config.
 
-- [ ] The breweries endpoint ( `GET /breweries` ) should be guarded by a custom middleware.
+- [x] The breweries endpoint ( `GET /breweries` ) should be guarded by a custom middleware.
 The middleware should validate the token and check if the user exists in the database.
 
 - The datasource should be the OpenBreweryDB https://www.openbrewerydb.org/
@@ -38,7 +38,7 @@ The middleware should validate the token and check if the user exists in the dat
 
 - [x] The search param should be provided in the query params ( `GET /breweries?query=dog` )
 
-- [ ] If the user is not authenticated on `GET /breweries` return `401`.
+- [x] If the user is not authenticated on `GET /breweries` return `401`.
 
 - [x] If the user not provided a query param return data from `https://api.openbrewerydb.org/breweries`
 
