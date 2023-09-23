@@ -16,4 +16,7 @@ export const config = {
   hash: {
     saltRounds: process.env.SALTROUNDS,
   },
+  axios:{
+    url:"https://api.openbrewerydb.org/breweries"
+  }
 };
